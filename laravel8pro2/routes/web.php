@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +38,30 @@ Route::get('/post-deleted/{id}', [PostController::class, 'deletePost']);
 Route::get('/edit-post/{id}', [PostController::class, 'editPost']);
 
 Route::post('/update-post', [PostController::class, 'updatePost'])->name('post.update');
+
+Route::get('/add-user',[UserController::class, 'insertRecord']);
+
+Route::get('/get-phone/{id}', [UserController::class, 'fetchPhoneByUser']);
+
+Route::get('/add-comment/{id}', [PostController::class, 'addComments']);
+
+Route::get('/comments/{id}', [PostController::class, 'getComments']);
+
+Route::get('/add-roles', [RoleController::class, 'addRole']);
+
+Route::get('/add-users', [RoleController::class, 'addUser']);
+
+Route::get('/rolebyuser/{id}', [RoleController::class, 'getRolesByUser']);
+
+Route::get('/userbyrole/{id}', [RoleController::class, 'getAllUserByRole']);
+
+Route::get('/add-employee', [EmployeeController::class, 'addEmployee']);
+
+Route::get('/love', [PostController::class, 'iLoveYou']);
+
+Route::get('/export-excel', [EmployeeController::class, 'exportIntoExcel']);
+
+Route::get('/export-csv', [EmployeeController::class, 'exportIntoCSV']);
+
+
+

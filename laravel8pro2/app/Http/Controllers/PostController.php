@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
+use App\Models\Comment;
 
 class PostController extends Controller
 {
@@ -56,5 +57,25 @@ class PostController extends Controller
         $post->body = $req->body;
         $post->save();
         return back()->with('post_updated','Post has been updated.');
+    }
+
+    public function addComments($id)
+    {
+        $post = Post::find($id);
+        $comment = new Comment();
+        $comment->comment = "This is the  third comment";
+        $post->comments()->save($comment);
+        return "Comment has been posted";
+    }
+
+    public function getComments($id)
+    {
+        $comment = Post::find($id)->comments;
+        return $comment;
+    }
+
+    public function iLoveYou()
+    {
+        return '<h1 style="text-align: center;"><i>I Love You!<i><br><img src="https://www.itl.cat/pngfile/big/4-45946_love-couple-wallpaper-for-android-sophisticated-love-hd.jpg" style="width: 300"></h1>';
     }
 }
