@@ -6,6 +6,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmpController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,5 +65,8 @@ Route::get('/export-excel', [EmployeeController::class, 'exportIntoExcel']);
 
 Route::get('/export-csv', [EmployeeController::class, 'exportIntoCSV']);
 
+Route::get('/get-all-employees', [EmpController::class, 'getAllEmployees']);
+
+Route::get('download-PDF', [EmpController::class,'downloadPDF']);
 
 
