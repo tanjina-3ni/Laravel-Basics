@@ -27,33 +27,52 @@
         }
         
     </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
 </head>
 <body>
-    <table id="emp">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Salary</th>
-                <th>Department</th>
+<!--section style='padding-top:10px;'>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    All Employees Info.
+                </div>
+                <div class="card-body">
+                    <table id="emp" class="table table-striped table-hover table-bordered table-responsive"-->
+                    <table id="emp">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Salary</th>
+                                <th>Department</th>
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($employees as $employee)
-            <tr>
-                <td>{{$employee->id}}</td>
-                <td>{{$employee->name}}</td>
-                <td>{{$employee->email}}</td>
-                <td>{{$employee->phone}}</td>
-                <td>{{$employee->salary}}</td>
-                <td>{{$employee->dept}}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($employees as $employee)
+                            <tr>
+                                <td>{{$employee->id}}</td>
+                                <td>{{$employee->name}}</td>
+                                <td>{{$employee->email}}</td>
+                                <td>{{$employee->phone}}</td>
+                                <td>{{$employee->salary}}</td>
+                                <td>{{$employee->dept}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                <!--/div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 </html>
