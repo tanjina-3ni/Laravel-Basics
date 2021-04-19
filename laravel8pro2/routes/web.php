@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpController;
+use App\Http\Controllers\ImageController;
 
 
 /*
@@ -72,4 +73,11 @@ Route::get('download-PDF', [EmpController::class,'downloadPDF']);
 Route::get('/import-form', [EmployeeController::class, 'importForm']);
 
 Route::post('/import', [EmployeeController::class,'import'])->name('import.file');
+
+Route::get('/resize-image', [ImageController::class, 'resizeImage']);
+
+Route::post('/resize-image', [ImageController::class, 'resizeImageSubmit'])->name('image-resize');
+
+
+
 
