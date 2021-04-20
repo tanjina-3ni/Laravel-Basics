@@ -8,6 +8,9 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\DropzoneController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\EditorController;
 
 
 /*
@@ -78,6 +81,12 @@ Route::get('/resize-image', [ImageController::class, 'resizeImage']);
 
 Route::post('/resize-image', [ImageController::class, 'resizeImageSubmit'])->name('image-resize');
 
+Route::get('/dropzone', [DropzoneController::class, 'dropzone']);
 
+Route::post('/dropzone', [DropzoneController::class, 'dropzoneStore'])->name('dropzoneStore');
+
+Route::get('/gallery', [GalleryController::class, 'gallery']);
+
+Route::get('/editor', [EditorController::class, 'editor']);
 
 
