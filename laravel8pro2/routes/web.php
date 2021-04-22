@@ -13,6 +13,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EditorController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,5 +89,9 @@ Route::post('/dropzone', [DropzoneController::class, 'dropzoneStore'])->name('dr
 Route::get('/gallery', [GalleryController::class, 'gallery']);
 
 Route::get('/editor', [EditorController::class, 'editor']);
+
+Route::get('/add-student', [StudentController::class, 'addStudent']);
+
+Route::post('/add-student', [StudentController::class, 'storeStudent'])->name('student-store');
 
 

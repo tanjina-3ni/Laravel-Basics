@@ -16,14 +16,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create()
-        $faker = Faker::create();
+        /*$faker = Faker::create();
         foreach (range(1,100) as $index)
         {
             DB::table('students')->insert([
                 'name'=>$faker->name,
                 'email'=>$faker->email,
-                'phone'=>$faker->phoneNumber
+                'phone'=>$faker->phoneNumber,
+                'profileimage'=>$faker->photo,
             ]);
-        }
+        }*/
     }
 }
